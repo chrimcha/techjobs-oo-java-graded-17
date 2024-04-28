@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.util.Objects.isNull;
+
 public class Job {
 
     private int id;
@@ -29,6 +31,41 @@ public class Job {
         this.positionType = aPositionType;
         this.coreCompetency = aCoreCompetency;
     }
+
+    // ~TODO: toString override method
+    // ~TODO: method to add "Data not available" to empty fields
+    @Override
+    public String toString() {
+        String fieldIsEmpty = "Data not available";
+
+        if (getName().isEmpty()) {
+            name = fieldIsEmpty;
+        }
+
+        if ((getEmployer().toString()).isEmpty()) {
+            employer.setValue(fieldIsEmpty);
+        }
+
+        if ((getLocation().toString()).isEmpty()) {
+            location.setValue(fieldIsEmpty);
+        }
+
+        if ((getPositionType().toString()).isEmpty()) {
+            positionType.setValue(fieldIsEmpty);
+        }
+
+        if ((getCoreCompetency().toString()).isEmpty()) {
+            coreCompetency.setValue(fieldIsEmpty);
+        }
+
+        return "\nID: " + getId() + "\n" +
+                "Name: " + getName() + "\n" +
+                "Employer: " + getEmployer() + "\n" +
+                "Location: " + getLocation() + "\n" +
+                "Position Type: " + getPositionType() + "\n" +
+                "Core Competency: " + getCoreCompetency() + "\n";
+    }
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.

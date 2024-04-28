@@ -33,7 +33,7 @@ public class TestTaskFive extends AbstractTest {
     }
 
 
-    @Test
+    @Test // Contents have difference only in line separators
     public void testToStringStartsAndEndsWithNewLine() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Job job = createJob("Web Developer", "LaunchCode", "StL", "Back-end developer", "Java");
         String firstChar = String.valueOf(job.toString().charAt(0));
